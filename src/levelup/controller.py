@@ -12,7 +12,7 @@ class GameStatus:
     move_count: int = 0
 
     def __str__(self) -> str:
-        return f"{self.character_name} is currently on {self.current_position} and moved {self.move_count} times."
+        return f"Character Name: {self.character_name} \t Character Position: {self.current_position} \t Character MoveCount: q{self.move_count}"
 
 class GameController:
     status: GameStatus
@@ -39,8 +39,6 @@ class GameController:
 
     def move(self, direction: Direction) -> None:
         self.character.move(direction)
-        self.status.current_position = (self.character.current_position.x, self.character.current_position.y)
-        self.status.move_count = self.status.move_count + 1
 
         # Status code is written for you
         self.status.current_position = (self.character.current_position.x, self.character.current_position.y)
