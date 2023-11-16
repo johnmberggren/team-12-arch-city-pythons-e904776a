@@ -25,8 +25,8 @@ class TestMap(TestCase):
 
     # Given the example above, what should these test?
     def test_is_position_valid_when_x_too_small(self):
-        # TODO: Put code here
-        pass
+        testobj = Map()
+        self.assertFalse(testobj.is_position_valid(Position(-1, 4)))
 
     def test_is_position_valid_when_x_too_big(self):
         # TODO: Put code here
@@ -45,38 +45,59 @@ class TestMap(TestCase):
         pass
 
     # # Remove comments to run this test, which will motivate you to write the production method
-    # def test_calculate_new_position_when_valid_NORTH(self):
-    #     testobj = Map()
-    #     startingPosition = Position(0,0)
-    #     expectedPosition = Position(0,1)
-    #     actualPosition = testobj.calculate_new_position(startingPosition, Direction.NORTH)
-    #     self.assertEqual(expectedPosition, actualPosition)
+    def test_calculate_new_position_when_valid_NORTH(self):
+        testobj = Map()
+        startingPosition = Position(0,0)
+        expectedPosition = Position(0,1)
+        actualPosition = testobj.calculate_new_position(startingPosition, Direction.NORTH)
+        self.assertEqual(expectedPosition, actualPosition)
 
     # Given the example above, what should these test?
     def test_calculate_new_position_when_valid_SOUTH(self):
-        # TODO: Put code here
-        pass
+        testobj = Map()
+        startingPosition = Position(3, 3)
+        expectedPosition = Position(3, 2)
+        actualPosition = testobj.calculate_new_position(startingPosition, Direction.SOUTH)
+        self.assertEqual(expectedPosition, actualPosition)
 
     def test_calculate_new_position_when_valid_EAST(self):
-        # TODO: Put code here
-        pass
+        testobj = Map()
+        startingPosition = Position(3, 2)
+        expectedPosition = Position(4, 2)
+        actualPosition = testobj.calculate_new_position(startingPosition, Direction.EAST)
+        self.assertEqual(expectedPosition, actualPosition)
 
     def test_calculate_new_position_when_valid_WEST(self):
-        # TODO: Put code here
-        pass
+        testobj = Map()
+        startingPosition = Position(3, 3)
+        expectedPosition = Position(2, 3)
+        actualPosition = testobj.calculate_new_position(startingPosition, Direction.WEST)
+        self.assertEqual(expectedPosition, actualPosition)
 
     def test_calculate_new_position_when_invalid_NORTH(self):
-        # TODO: Put code here
-        pass
+        testobj = Map()
+        startingPosition = Position(9, 9)
+        expectedPosition = Position(9, 9)
+        actualPosition = testobj.calculate_new_position(startingPosition, Direction.NORTH)
+        self.assertEqual(expectedPosition, actualPosition)
 
     def test_calculate_new_position_when_invalid_SOUTH(self):
-        # TODO: Put code here
-        pass
+        testobj = Map()
+        startingPosition = Position(0, 0)
+        expectedPosition = Position(0, 0)
+        actualPosition = testobj.calculate_new_position(startingPosition, Direction.SOUTH)
+        self.assertEqual(expectedPosition, actualPosition)
 
-    def test_calculate_new_position_when_valid_EAST(self):
-        # TODO: Put code here
-        pass
+    def test_calculate_new_position_when_invalid_EAST(self):
+        testobj = Map()
+        startingPosition = Position(9, 0)
+        expectedPosition = Position(9, 0)
+        actualPosition = testobj.calculate_new_position(startingPosition, Direction.EAST)
+        self.assertEqual(expectedPosition, actualPosition)
 
-    def test_calculate_new_position_when_valid_WEST(self):
-        # TODO: Put code here
-        pass 
+    def test_calculate_new_position_when_invalid_WEST(self):
+        testobj = Map()
+        startingPosition = Position(0, 9)
+        expectedPosition = Position(0, 9)
+        actualPosition = testobj.calculate_new_position(startingPosition, Direction.WEST)
+        self.assertEqual(expectedPosition, actualPosition)
