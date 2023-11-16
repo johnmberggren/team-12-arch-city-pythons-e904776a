@@ -12,8 +12,7 @@ class Map ():
     num_positions = size[0]*size[1]
 
     def __init__(self):
-        # TODO: implement method here and remove the print statement below
-        print("map constructor method not yet implemented")
+        self.create_positions()
 
     def is_position_valid(self, position :Position) -> bool:
         # TODO: implement method here and remove the print statement below
@@ -24,3 +23,13 @@ class Map ():
         # TODO: implement method here and remove the print statement below
         print("calculate_new_position method not yet implemented")
         return None
+
+    def create_positions(self) -> None:
+        temp_pos = []
+        for x in range(self.size[0]):
+            y_range = []
+            for y in range(self.size[1]):
+                new_pos = Position(x,y)
+                y_range.append(new_pos)
+            temp_pos.append(y_range)
+        self.positions = temp_pos
