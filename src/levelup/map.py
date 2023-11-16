@@ -15,9 +15,10 @@ class Map ():
         self.create_positions()
 
     def is_position_valid(self, position :Position) -> bool:
-        # TODO: implement method here and remove the print statement below
-        print("is_position_valid method not yet implemented")
-        return False        
+        if position.x >= 0 and position.x < self.size[0] and position.y >= 0 and position.y < self.size[1]:
+            return True
+        else:
+            return False       
 
     def calculate_new_position(self, current_position: Position, direction: Direction) -> Position:
         # TODO: implement method here and remove the print statement below
