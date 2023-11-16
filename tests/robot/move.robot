@@ -1,9 +1,5 @@
 *** Settings ***
-Documentation
-
-    I want to move my character. If they attempt to move past a boundary, the move results in no change in position.
-    https://github.com/level-up-program/team-12-arch-city-pythons-e904776a/blob/main/tests/robot/images/Move%20spec%20by%20example%201.jpeg
-    https://github.com/level-up-program/team-12-arch-city-pythons-e904776a/blob/main/tests/robot/images/Move%20spec%20by%20example%202.jpeg
+Documentation I want to move my character. If they attempt to move past a boundary, the move results in no change in position.\n\nhttps://github.com/level-up-program/team-12-arch-city-pythons-e904776a/blob/main/tests/robot/images/Move%20spec%20by%20example%201.jpeg\n\nhttps://github.com/level-up-program/team-12-arch-city-pythons-e904776a/blob/main/tests/robot/images/Move%20spec%20by%20example%202.jpeg
 Test Template     Move character
 Library           MoveLibrary.py
 
