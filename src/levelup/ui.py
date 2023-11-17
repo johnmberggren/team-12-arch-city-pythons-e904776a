@@ -26,7 +26,35 @@ class GameApp:
 
     def create_character(self):
         print("Welcome to Level Up Game")
-        print("LOGO GOES HERE")
+        print("")
+        print("                      %,,,,,,,,,,,,,,,,,,%/,,,,,,,,,,,,,,,,,.                   ")
+        print("                    #%,,,,,,,,,,,,,,,,,,  %%,,,,,,,,,,,,,,,,,,                  ")
+        print("                   %,,,,,,,,,,,,,,,,,,,    #%,,,,,,,,,,,,,,,,,,.                ")
+        print("                 *%*******************      ,%*******************               ")
+        print("                %/*******************         %*******************              ")
+        print("              .%,,,,,,,,,,,,,,,,,,,,           %,,,,,,,,,,,,,,,,,,,,            ")
+        print("             %#,,,,,,,,,,,,,,,,,,,.             %*,,,,,,,,,,,,,,,,,,,           ")
+        print("            %,,,,,,,,,,,,,,,,,,,,                %#,,,,,,,,,,,,,,,,,,,,         ")
+        print("          %&,,,,,,,,,,,,,,,,,,,,                  %&,,,,,,,,,,,,,,,,,,,,        ")
+        print("         %.....................                    /%.....................      ")
+        print("       %&.....................                       %.....................     ")
+        print("      %......................                         %.....................    ")
+        print("    #%.....................                            %......................  ")
+        print("     /%...................                              %*...................   ")
+        print("       %.................                                %&................     ")
+        print("        #%,,,,,,,,,,,,,,***,,,,,                  %(,,,*****,,,,,,,,,,,,,,      ")
+        print("          %,,,,,,,,,,,,****,,,,,                  %#,,,******,,,,,,,,,,,.       ")
+        print("           %%*********/****,,,,,                  %%,,,*****,,*********         ")
+        print("             %*******//****,,,,,                  %%,,,*****,,,******,          ")
+        print("              %%///////****,,,,,                  %%,,,*****,,,,////            ")
+        print("                %//////****,,,,,                  %&,,,*****,,,,,,/             ")
+        print("                 %%////****,,,,,                  %&,,,*****,,,,,               ")
+        print("                  .%///****,,,,,                  %%,,,*****,,,,                ")
+        print("                    %//****,,,,,                  %%,,,*****,,.                 ")
+        print("                     %%****,,,,,                  (%,,,*****,                   ")
+                                                                                
+
+
         response = self.prompt("Press <s> to start the game or <q> to quit", lambda x: x in VALID_START_COMMANDS)
         if response == 'q':
             self.quit()
@@ -35,6 +63,7 @@ class GameApp:
         print(f"Your character name is: {self.controller.status.character_name}")
 
     def move_loop(self):
+        print(f"Your starting position is at {self.controller.status.current_position}")
         while True:
             response = self.prompt(
                 f"Where would you like to go? {VALID_DIRECTIONS}\n(or q to quit)",
@@ -55,5 +84,22 @@ class GameApp:
         self.move_loop()
 
     def quit(self):
-        print(f"{self.controller.status.character_name} started on {self.starting_pos}, ended on {self.controller.status.current_position} and moved {self.controller.status.move_count} times.")
+        print(f"{self.controller.status.character_name} started at position: {self.starting_pos}")
+        print(f"{self.controller.status.character_name} took {self.controller.status.move_count} moves.")
+        print(f"{self.controller.status.character_name} ended at position: {self.controller.status.current_position}")
+        # print(f"{self.controller.status.character_name} bounced off the edge of the map {self.controller.status.bounce_count} times.")
+        print("       ---_ ......._-_--.     ")
+        print("      (|\ /      / /| \  \ ")
+        print("      /  /     .'  -=-'   `.")
+        print("     /  /    .'             )")
+        print("   _/  /   .'        _.)   /")
+        print("  / o   o        _.-' /  .'")
+        print("  \          _.-'    / .'*|")
+        print("   \______.-'//    .'.' \*|")
+        print("      .  .// .'.' | _ _ \*|")
+        print("      \`-|\_/ /    \ _ _ \*\ ")
+        print("       `/'\__/      \ _ _ \*\ ")
+        print("      /^|            \ _ _ \*")
+        print("     '  `             \ _ _ \ ")
+        print("                       \_")
         quit()
