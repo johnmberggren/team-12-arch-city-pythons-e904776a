@@ -4,7 +4,7 @@ from tests.map_double import MapDouble
 from levelup.direction import Direction
 
 class TestCharacter(TestCase):
-    ARBITRARY_NAME = "MyName"
+    ARBITRARY_NAME = "Steve"
 
     def test_init(self):
         testobj = Character(self.ARBITRARY_NAME)
