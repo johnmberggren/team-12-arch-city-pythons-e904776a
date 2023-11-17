@@ -1,4 +1,5 @@
 import logging
+import os
 from typing import Callable
 from levelup.controller import GameController
 from levelup.direction import Direction
@@ -75,6 +76,7 @@ class GameApp:
             self.controller.move(direction)
             print(f"You moved {direction.name}")
             print(self.controller.status)
+            os.system('clear' if os.name =='posix' else 'cls')
             for x in range(8,-1,-1):
                 for y in range(9):
                     if (y,x) == self.controller.status.current_position:
@@ -82,6 +84,7 @@ class GameApp:
                     else:
                         print('.', end=' ')
                 print()
+            
            
                 
 
