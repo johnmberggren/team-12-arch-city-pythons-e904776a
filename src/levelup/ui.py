@@ -5,6 +5,7 @@ from levelup.direction import Direction
 
 VALID_DIRECTIONS = [x.value for x in Direction]
 VALID_COMMANDS = VALID_DIRECTIONS + ['q']
+VALID_START_COMMANDS = ['s'] + ['q']
 # This is prewritten for you. You should only have to change it to make the text copy match what your prompts should say
 class GameApp:
 
@@ -24,7 +25,12 @@ class GameApp:
         return response
 
     def create_character(self):
-        character = self.prompt("Enter character name", lambda x: len(x) > 0)
+        print("Welcome to Level Up Game")
+        print("LOGO GOES HERE")
+        response = self.prompt("Press <s> to start the game or <q> to quit", lambda x: x in VALID_START_COMMANDS)
+        if response == 'q':
+            self.quit()
+        character = self.prompt("Enter character name and press <Enter> to continue: ", lambda x: len(x) > 0)
         self.controller.create_character(character)
         print(f"Your character name is: {self.controller.status.character_name}")
 
