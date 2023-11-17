@@ -3,6 +3,7 @@ from levelup.controller import GameController
 from tests.character_double import CharacterDouble
 from levelup.direction import Direction
 from levelup.position import Position
+from levelup.character import Character
 
 class TestGameController(TestCase):
     def test_init(self):
@@ -47,7 +48,7 @@ class TestGameController(TestCase):
     def test_bounce_count_increments(self):
         testobj = GameController()
         arbitrary_name = "ARBITRARY"
-        mock_char = CharacterDouble(arbitrary_name, Position(0,0))
+        mock_char = Character(arbitrary_name)
         testobj.character = mock_char
         arbitrary_direction = Direction.SOUTH
 

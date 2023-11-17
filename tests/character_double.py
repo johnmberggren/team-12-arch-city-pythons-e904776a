@@ -12,8 +12,6 @@ class CharacterDouble (Character):
 
     def __init__(self, character_name, current_postion=ARBITRARY_POSITION):
         self.current_position = current_postion
-        print(self.current_position.x)
-        print(self.current_position.y)
 
     def move(self, direction: Direction) -> None:
         self.last_move_direction = direction
