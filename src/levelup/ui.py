@@ -95,7 +95,7 @@ class GameApp:
         print(f"{self.controller.status.character_name} started at position: {self.starting_pos}")
         print(f"{self.controller.status.character_name} took {self.controller.status.move_count} moves.")
         print(f"{self.controller.status.character_name} ended at position: {self.controller.status.current_position}")
-        # print(f"{self.controller.status.character_name} bounced off the edge of the map {self.controller.status.bounce_count} times.")
+        print(f"{self.controller.status.character_name} bounced off the edge of the map {self.controller.status.bounce_count} times.")
         print("")
         print("GAME OVER")
         print("")
