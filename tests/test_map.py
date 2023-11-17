@@ -26,23 +26,23 @@ class TestMap(TestCase):
     # Given the example above, what should these test?
     def test_is_position_valid_when_x_too_small(self):
         testobj = Map()
-        self.assertFalse(testobj.is_position_valid(Position(-1, 4)))
+        self.assertFalse(testobj.is_position_valid(Position(-10, 4)))
 
     def test_is_position_valid_when_x_too_big(self):
         testobj = Map()
-        self.assertFalse(testobj.is_position_valid(Position(10, 4)))
+        self.assertFalse(testobj.is_position_valid(Position(100, 4)))
 
     def test_is_position_valid_when_y_too_small(self):
        testobj = Map()
-       self.assertFalse(testobj.is_position_valid(Position(0, -1)))
+       self.assertFalse(testobj.is_position_valid(Position(0, -10)))
 
     def test_is_position_valid_when_y_too_big(self):
         testobj = Map()
-        self.assertFalse(testobj.is_position_valid(Position(3, 10)))
+        self.assertFalse(testobj.is_position_valid(Position(3, 112)))
 
     def test_is_position_valid_when_x_and_y_too_big(self):
         testobj = Map()
-        self.assertFalse(testobj.is_position_valid(Position(11, 10)))
+        self.assertFalse(testobj.is_position_valid(Position(121, 10)))
 
     # # Remove comments to run this test, which will motivate you to write the production method
     def test_calculate_new_position_when_valid_NORTH(self):
@@ -99,5 +99,5 @@ class TestMap(TestCase):
         testobj = Map()
         startingPosition = Position(0, 9)
         expectedPosition = Position(0, 9)
-        actualPosition = testobj.calculate_new_position(startingPosition, Direction.WEST)
+        actualPosition = testobj.calculate_new_position(startingPosition, Direction.WEST )
         self.assertEqual(expectedPosition, actualPosition)
