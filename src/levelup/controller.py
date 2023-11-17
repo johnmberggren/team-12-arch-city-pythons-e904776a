@@ -12,7 +12,7 @@ class GameStatus:
     move_count: int = 0
 
     def __str__(self) -> str:
-        return f"Character Name: {self.character_name} \t Character Position: {self.current_position} \t Character MoveCount: q{self.move_count}"
+        return f"Character Name: {self.character_name} \t Character Position: {self.current_position} \t Character MoveCount: {self.move_count}"
 
 class GameController:
     status: GameStatus
