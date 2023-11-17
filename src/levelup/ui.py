@@ -80,7 +80,7 @@ class GameApp:
             for x in range(9,-1,-1):
                 for y in range(10):
                     if (y,x) == self.controller.status.current_position:
-                        print('P', end=' ')
+                        print(self.controller.status.character_name[0], end=' ')
                     else:
                         print('.', end=' ')
                 print()
