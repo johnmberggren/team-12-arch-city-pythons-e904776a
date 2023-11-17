@@ -75,8 +75,8 @@ class GameApp:
             self.controller.move(direction)
             print(f"You moved {direction.name}")
             print(self.controller.status)
-            for x in range(8,-1,-1):
-                for y in range(9):
+            for x in range(9,-1,-1):
+                for y in range(10):
                     if (y,x) == self.controller.status.current_position:
                         print('P', end=' ')
                     else:
@@ -98,7 +98,7 @@ class GameApp:
         print(f"{self.controller.status.character_name} ended at position: {self.controller.status.current_position}")
         print(f"{self.controller.status.character_name} bounced off the edge of the map {self.controller.status.bounce_count} times.")
         print("")
-        print("GAME OVER")
+        print("---------------------GAME OVER------------------------")
         print("")
         print("       ---_ ......._-_--.     ")
         print("      (|\ /      / /| \  \ ")
