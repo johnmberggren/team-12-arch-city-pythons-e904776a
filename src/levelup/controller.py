@@ -10,6 +10,7 @@ class GameStatus:
     character_name: str = ""
     current_position: tuple = (-100,-100)
     move_count: int = 0
+    bounce_count: int = 0
 
     def __str__(self) -> str:
         return f"Character Name: {self.character_name} \t Character Position: {self.current_position} \t Character MoveCount: {self.move_count}"
@@ -31,6 +32,7 @@ class GameController:
         # Status code is written for you
         self.status.current_position = (self.character.current_position.x, self.character.current_position.y)
         self.status.move_count = 0
+        self.status.bounce_count = 0
 
     # Pre-written for you
     def create_character(self, character_name: str) -> None:
@@ -41,6 +43,8 @@ class GameController:
         self.character.move(direction)
 
         # Status code is written for you
+        if self.status.current_position == (self.character.current_position.x, self.character.current_position.y):
+            self.status.bounce_count = self.status.bounce_count + 1
         self.status.current_position = (self.character.current_position.x, self.character.current_position.y)
         self.status.move_count = self.status.move_count + 1
 

@@ -2,6 +2,7 @@ from unittest import TestCase
 from levelup.controller import GameController
 from tests.character_double import CharacterDouble
 from levelup.direction import Direction
+from levelup.position import Position
 
 class TestGameController(TestCase):
     def test_init(self):
@@ -41,5 +42,16 @@ class TestGameController(TestCase):
 
         self.assertTrue(mock_char.is_move_called)
         self.assertEqual(mock_char.last_move_direction, arbitrary_direction)
+
+    # # Remove comments to run this test, which will motivate you to write the production method
+    def test_bounce_count_increments(self):
+        testobj = GameController()
+        arbitrary_name = "ARBITRARY"
+        mock_char = CharacterDouble(arbitrary_name, Position(0,0))
+        testobj.character = mock_char
+        arbitrary_direction = Direction.SOUTH
+
+        testobj.move(arbitrary_direction)
         
-        
+        self.assertEqual(testobj.status.bounce_count, 1)
+
