@@ -14,9 +14,8 @@ class CharacterDouble (Character):
         self.current_position = Position(5,5)
 
     def move(self, direction: Direction) -> None:
-        # What should happen here so we can keep track of calls to this and use it in our tests?
-        pass
+        self.last_move_direction = direction
+        self.is_move_called=True
 
     def enter_map(self, map: Map) -> None:
-        # What should happen here so we can keep track of calls to this and use it in our tests?
-        pass
+        self.is_enter_map_called=True
